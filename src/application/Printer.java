@@ -3,7 +3,6 @@ package application;
 import java.util.List;
 
 public class Printer {
-
     public static void print(String args) {
         System.out.println(args);
     }
@@ -63,5 +62,29 @@ public class Printer {
             System.out.println();
         }
         System.out.println(TRACE);
+    }
+    public static void println(String args) { System.out.println(args); }
+    public static void printTable(int[][] matrix) {
+        System.out.println("Sudoku Board:");
+
+        for (int i = 0; i < 9; i++) {
+            if (i % 3 == 0 && i != 0) {
+                System.out.println("------+-------+------");
+            }
+
+            for (int j = 0; j < 9; j++) {
+                if (j % 3 == 0 && j != 0) {
+                    System.out.print("| ");
+                }
+
+                if (matrix[i][j] == 0) {
+                    System.out.print("_ ");
+                } else {
+                    System.out.print(matrix[i][j] + " ");
+                }
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 }
