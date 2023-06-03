@@ -8,6 +8,7 @@ public class Executer {
     public static final int GAME_TICTACTOE = 2;
     public static final int GAME_SUDOKU = 3;
     public static final int EXIT = 4;
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int choice;
@@ -35,7 +36,7 @@ public class Executer {
         System.out.println("2. tic tac toe");
         System.out.println("3. sudoku");
         System.out.println("4. exit");
-        System.out.print("option: ");
+        System.out.println("option: ");
     }
     public static void playGame1(Scanner sc1) {
         System.out.println("====== HANGMAN GAME ======");
@@ -44,10 +45,10 @@ public class Executer {
 
         game.playing(sc1);
     }
-
     public static void playGame2(Scanner sc2) {
         System.out.println("====== TIC TAC TOE GAME ======");
         char[][] gameBoard = Game.Game1.gameBoard();
+
         Printer.printGameBoard(gameBoard);
 
         while (true) {
@@ -76,6 +77,7 @@ public class Executer {
             } while (Game.Game1.p1Positions.contains(p2Position) || Game.Game1.p2Positions.contains(p2Position));
 
             Game.Game1.placePiece(gameBoard, p2Position, "p2");
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             Printer.printGameBoard(gameBoard);
 
             gameResult = Game.Game1.logicForWinning();
@@ -89,15 +91,15 @@ public class Executer {
         System.out.println("====== SUDOKU GAME ======");
 
         int[][] matrix = {
-                {0, 2, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 6, 0, 0, 0, 0, 1},
-                {0, 0, 0, 0, 8, 0, 0, 4, 7},
-                {0, 5, 0, 0, 0, 0, 0, 3, 0},
-                {0, 0, 6, 0, 7, 0, 5, 0, 0},
-                {0, 7, 0, 0, 0, 0, 0, 9, 0},
-                {9, 6, 0, 0, 1, 0, 0, 0, 0},
-                {3, 0, 0, 0, 0, 4, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 1, 0}
+                {0, 0, 0, 0, 4, 0, 0, 7, 3},
+                {4, 3, 8, 6, 0, 7, 0, 5, 9},
+                {5, 0, 6, 9, 3, 1, 0, 2, 8},
+                {2, 0, 0, 0, 0, 0, 3, 0, 0},
+                {0, 0, 0, 2, 0, 6, 0, 0, 5},
+                {0, 6, 4, 1, 5, 0, 0, 0, 0},
+                {0, 2, 3, 0, 0, 9, 5, 0, 0},
+                {0, 0, 0, 0, 1, 0, 0, 0, 6},
+                {6, 0, 7, 0, 0, 0, 9, 0, 4}
         };
 
         Game.Game3 game = new Game.Game3();

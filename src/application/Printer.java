@@ -45,7 +45,7 @@ public class Printer {
             if (playerGuesses.contains(word.charAt(i))) {
                 System.out.print(word.charAt(i));
             } else {
-                print("-");
+                System.out.print("-");
             }
         }
 
@@ -63,7 +63,9 @@ public class Printer {
         }
         System.out.println(TRACE);
     }
-    public static void println(String args) { System.out.println(args); }
+    public static void println(String args) {
+        System.out.println(args);
+    }
     public static void printTable(int[][] matrix) {
         System.out.println("Sudoku Board:");
 
