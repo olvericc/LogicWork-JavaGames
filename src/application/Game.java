@@ -65,11 +65,11 @@ public class Game {
 
             for (List<Integer> list : win) {
                 if (p1Positions.containsAll(list)) {
-                    return "player 1 wins!";
+                    return "Jogador 1 venceu!";
                 } else if (p2Positions.containsAll(list)) {
-                    return "player 2 wins!";
+                    return "Jogador 2 venceu!";
                 } else if (p1Positions.size() + p2Positions.size() == 9) {
-                    return "tied game!";
+                    return "Jogo empatado!";
                 }
             }
             return "";
@@ -81,7 +81,7 @@ public class Game {
         private int wrongCount;
 
         public void singlePlayer() {
-            String[] words = {"popcorn", "apple", "avocado", "grape", "orange", "watermelon"};
+            String[] words = {"pipoca", "maçã", "abacate", "uva", "laranja", "melancia"};
             List<String> hiddenWords = new ArrayList<>(Arrays.asList(words));
             Random random = new Random();
 
@@ -95,8 +95,8 @@ public class Game {
                 Printer.printMan(wrongCount);
 
                 if (wrongCount >= 6) {
-                    System.out.println("you lose!");
-                    System.out.println("the word was: " + word);
+                    System.out.println("Você perdeu!");
+                    System.out.println("A palavra era: " + word);
                     break;
                 }
 
@@ -106,23 +106,23 @@ public class Game {
                 }
 
                 if (Printer.printWord(word, guesses)) {
-                    System.out.println("you win!");
+                    System.out.println("Parabéns! Você venceu.");
                     break;
                 }
 
-                System.out.println("please enter your guess for the word:");
+                System.out.println("Por favor, insira o seu palpite para a palavra:");
                 if (sc.nextLine().equals(word)) {
-                    System.out.println("you win!");
+                    System.out.println("Parabéns! Você venceu.");
                     break;
                 } else {
-                    System.out.println("miss! try again.");
+                    System.out.println("Perdeu! Tente novamente.");
                 }
             }
         }
 
         private boolean guesses(Scanner sc, String word, List<Character> playerGuesses) {
-            System.out.println("please enter a letter:");
-            String letterGuess = sc.nextLine();
+            System.out.println("Por favor, digite uma letra: ");
+            String letterGuess = sc.nextLine().toLowerCase();
             playerGuesses.add(letterGuess.charAt(0));
 
             return word.contains(letterGuess);
